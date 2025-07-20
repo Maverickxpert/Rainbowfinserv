@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartLoan Hub - Home Loans, Personal Loans & Vehicle Loans</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <h2>SmartLoan Hub</h2>
+            </div>
+            <ul class="nav__menu">
+                <li><a href="#home" class="nav__link">Home</a></li>
+                <li class="nav__dropdown">
+                    <a href="#" class="nav__link">Loan Types <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown__menu">
+                        <li><a href="#home-loans" class="dropdown__link">Home Loans</a></li>
+                        <li><a href="#personal-loans" class="dropdown__link">Personal Loans</a></li>
+                        <li><a href="#vehicle-loans" class="dropdown__link">Vehicle Loans</a></li>
+                    </ul>
+                </li>
+                <li><a href="#calculators" class="nav__link">Calculators</a></li>
+                <li><a href="#apply" class="nav__link">Apply Now</a></li>
+                <li><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+            <div class="nav__toggle">☰</div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">Your Dream Loans Made Simple</h1>
+                <p class="hero__subtitle">Get competitive interest rates and quick approvals for all your financial needs. From home loans to personal loans, we've got you covered.</p>
+                <button class="btn btn--primary btn--lg hero__cta">Check Eligibility</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Types Cards -->
+    <section class="loan-types">
+        <div class="container">
+            <h2 class="section__title">Choose Your Loan Type</h2>
+            <div class="loan-cards">
+                <div class="loan-card">
+                    <div class="loan-card__icon">🏠</div>
+                    <h3>Home Loans</h3>
+                    <p class="loan-card__rate">Starting from <strong>7.35%</strong> p.a.</p>
+                    <ul class="loan-card__features">
+                        <li>Up to Rs 5 crore</li>
+                        <li>Tax benefits up to Rs 3.5 lakh</li>
+                        <li>No prepayment penalty</li>
+                    </ul>
+                    <button class="btn btn--outline loan-card__btn" data-loan="home">Learn More</button>
+                </div>
+                <div class="loan-card">
+                    <div class="loan-card__icon">💰</div>
+                    <h3>Personal Loans</h3>
+                    <p class="loan-card__rate">Starting from <strong>10.49%</strong> p.a.</p>
+                    <ul class="loan-card__features">
+                        <li>Rs 50,000 - Rs 55 lakh</li>
+                        <li>No collateral required</li>
+                        <li>Quick approval in 24-48 hours</li>
+                    </ul>
+                    <button class="btn btn--outline loan-card__btn" data-loan="personal">Learn More</button>
+                </div>
+                <div class="loan-card">
+                    <div class="loan-card__icon">🚗</div>
+                    <h3>Vehicle Loans</h3>
+                    <p class="loan-card__rate">Starting from <strong>8.35%</strong> p.a.</p>
+                    <ul class="loan-card__features">
+                        <li>Up to Rs 5 crore</li>
+                        <li>Up to 100% funding</li>
+                        <li>Quick processing</li>
+                    </ul>
+                    <button class="btn btn--outline loan-card__btn" data-loan="vehicle">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section__title">Why Choose SmartLoan Hub?</h2>
+            <div class="features__grid">
+                <div class="feature">
+                    <div class="feature__icon">⚡</div>
+                    <h3>Quick Approval</h3>
+                    <p>Get loan approval in just 24-48 hours with minimal documentation</p>
+                </div>
+                <div class="feature">
+                    <div class="feature__icon">📉</div>
+                    <h3>Competitive Rates</h3>
+                    <p>Best-in-market interest rates starting from 7.35% p.a.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature__icon">📄</div>
+                    <h3>Minimal Documentation</h3>
+                    <p>Simple paperwork and hassle-free loan processing</p>
+                </div>
+                <div class="feature">
+                    <div class="feature__icon">🎯</div>
+                    <h3>Expert Support</h3>
+                    <p>Dedicated relationship manager for personalized service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Calculator -->
+    <section id="calculators" class="calculator">
+        <div class="container">
+            <h2 class="section__title">EMI Calculator</h2>
+            <div class="calculator__tabs">
+                <button class="tab-btn active" data-tab="home">Home Loan</button>
+                <button class="tab-btn" data-tab="personal">Personal Loan</button>
+                <button class="tab-btn" data-tab="vehicle">Vehicle Loan</button>
+            </div>
+            <div class="calculator__content">
+                <div class="calculator__inputs">
+                    <div class="form-group">
+                        <label class="form-label">Loan Amount (Rs)</label>
+                        <input type="number" id="loanAmount" class="form-control" placeholder="500000" value="500000">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Interest Rate (% p.a.)</label>
+                        <input type="number" id="interestRate" class="form-control" placeholder="8.5" value="8.5" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Loan Tenure (Years)</label>
+                        <input type="number" id="loanTenure" class="form-control" placeholder="20" value="20">
+                    </div>
+                    <button class="btn btn--primary" id="calculateEMI">Calculate EMI</button>
+                </div>
+                <div class="calculator__results">
+                    <div class="result-card">
+                        <h3>Monthly EMI</h3>
+                        <p class="result-amount" id="emiAmount">Rs 0</p>
+                    </div>
+                    <div class="result-card">
+                        <h3>Total Interest</h3>
+                        <p class="result-amount" id="totalInterest">Rs 0</p>
+                    </div>
+                    <div class="result-card">
+                        <h3>Total Payment</h3>
+                        <p class="result-amount" id="totalPayment">Rs 0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <h3>Interest Rate Comparison</h3>
+                <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/ad937e99bd4941c0db78024e13a2d880/60f79e56-429e-40d8-92bd-3991e6b52ce0/0b0fd7ca.png" alt="Loan Interest Rates Comparison" class="chart-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Details Sections -->
+    <section id="home-loans" class="loan-details">
+        <div class="container">
+            <h2>Home Loans</h2>
+            <div class="loan-info">
+                <div class="loan-info__main">
+                    <div class="loan-spec">
+                        <h3>Loan Specifications</h3>
+                        <ul>
+                            <li><strong>Interest Rate:</strong> 7.35% - 12.65% p.a.</li>
+                            <li><strong>Loan Amount:</strong> Up to Rs 5 crore</li>
+                            <li><strong>Tenure:</strong> Up to 30 years</li>
+                            <li><strong>Processing Fee:</strong> 0.25% - 2.0% of loan amount</li>
+                        </ul>
+                    </div>
+                    <div class="loan-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Tax benefits up to Rs 3.5 lakh</li>
+                            <li>No prepayment penalty</li>
+                            <li>Property as security</li>
+                            <li>Flexible repayment options</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="loan-info__side">
+                    <div class="eligibility">
+                        <h3>Eligibility Criteria</h3>
+                        <ul>
+                            <li><strong>Age:</strong> 21-70 years</li>
+                            <li><strong>Salaried:</strong> Rs 25,000+ per month</li>
+                            <li><strong>Self-Employed:</strong> Rs 3 lakh+ annually</li>
+                        </ul>
+                    </div>
+                    <div class="documents">
+                        <h3>Required Documents</h3>
+                        <ul>
+                            <li>Identity proof</li>
+                            <li>Address proof</li>
+                            <li>Income proof</li>
+                            <li>Property documents</li>
+                            <li>Bank statements</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="personal-loans" class="loan-details">
+        <div class="container">
+            <h2>Personal Loans</h2>
+            <div class="loan-info">
+                <div class="loan-info__main">
+                    <div class="loan-spec">
+                        <h3>Loan Specifications</h3>
+                        <ul>
+                            <li><strong>Interest Rate:</strong> 10.49% - 24.00% p.a.</li>
+                            <li><strong>Loan Amount:</strong> Rs 50,000 - Rs 55 lakh</li>
+                            <li><strong>Tenure:</strong> 1-7 years</li>
+                            <li><strong>Processing Fee:</strong> Up to 6.5% of loan amount</li>
+                        </ul>
+                    </div>
+                    <div class="loan-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>No collateral required</li>
+                            <li>Quick approval in 24-48 hours</li>
+                            <li>Flexible usage</li>
+                            <li>Minimal documentation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="loan-info__side">
+                    <div class="eligibility">
+                        <h3>Eligibility Criteria</h3>
+                        <ul>
+                            <li><strong>Age:</strong> 21-60 years</li>
+                            <li><strong>Salaried:</strong> Rs 25,000+ per month</li>
+                            <li><strong>Self-Employed:</strong> Rs 15 lakh+ annually</li>
+                        </ul>
+                    </div>
+                    <div class="documents">
+                        <h3>Required Documents</h3>
+                        <ul>
+                            <li>Identity proof</li>
+                            <li>Address proof</li>
+                            <li>Income proof</li>
+                            <li>Bank statements</li>
+                            <li>Employment proof</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vehicle-loans" class="loan-details">
+        <div class="container">
+            <h2>Vehicle Loans</h2>
+            <div class="loan-info">
+                <div class="loan-info__main">
+                    <div class="loan-spec">
+                        <h3>Loan Specifications</h3>
+                        <ul>
+                            <li><strong>Interest Rate:</strong> 8.35% - 15.00% p.a.</li>
+                            <li><strong>Loan Amount:</strong> Up to Rs 5 crore</li>
+                            <li><strong>Tenure:</strong> 1-7 years</li>
+                            <li><strong>Processing Fee:</strong> 1% - 3% of loan amount</li>
+                        </ul>
+                    </div>
+                    <div class="loan-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Up to 100% funding</li>
+                            <li>Vehicle as security</li>
+                            <li>Quick processing</li>
+                            <li>Competitive rates</li>
+                        </ul>
+                    </div>
+                    <div class="vehicle-types">
+                        <h3>Vehicle Types</h3>
+                        <ul>
+                            <li><strong>New Car:</strong> Up to 90% funding, 7 years tenure</li>
+                            <li><strong>Used Car:</strong> Up to 75% funding, 5 years tenure</li>
+                            <li><strong>Two Wheeler:</strong> Up to 100% funding, 5 years tenure</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="loan-info__side">
+                    <div class="eligibility">
+                        <h3>Eligibility Criteria</h3>
+                        <ul>
+                            <li><strong>Age:</strong> 21-65 years</li>
+                            <li><strong>Salaried:</strong> Rs 25,000+ per month</li>
+                            <li><strong>Self-Employed:</strong> Rs 3 lakh+ annually</li>
+                        </ul>
+                    </div>
+                    <div class="documents">
+                        <h3>Required Documents</h3>
+                        <ul>
+                            <li>Identity proof</li>
+                            <li>Address proof</li>
+                            <li>Income proof</li>
+                            <li>Vehicle documents</li>
+                            <li>Bank statements</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Comparison -->
+    <section class="comparison">
+        <div class="container">
+            <h2 class="section__title">Loan Comparison</h2>
+            <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/ad937e99bd4941c0db78024e13a2d880/57309058-c885-4844-8fb4-959158dee652/86aadf63.png" alt="Loan Comparison Table" class="comparison-img">
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section id="apply" class="application">
+        <div class="container">
+            <h2 class="section__title">Apply for Loan</h2>
+            <div class="application__form">
+                <div class="form-steps">
+                    <div class="step active" data-step="1">
+                        <span class="step-number">1</span>
+                        <span class="step-title">Personal Info</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <span class="step-number">2</span>
+                        <span class="step-title">Employment</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <span class="step-number">3</span>
+                        <span class="step-title">Loan Details</span>
+                    </div>
+                    <div class="step" data-step="4">
+                        <span class="step-number">4</span>
+                        <span class="step-title">Review</span>
+                    </div>
+                </div>
+
+                <form id="loanApplicationForm">
+                    <!-- Step 1: Personal Information -->
+                    <div class="form-step active" data-step="1">
+                        <h3>Personal Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control" name="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Date of Birth</label>
+                                <input type="date" class="form-control" name="dob" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Address</label>
+                            <textarea class="form-control" name="address" rows="3" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Employment Details -->
+                    <div class="form-step" data-step="2">
+                        <h3>Employment & Income Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Employment Type</label>
+                                <select class="form-control" name="employmentType" required>
+                                    <option value="">Select Type</option>
+                                    <option value="salaried">Salaried</option>
+                                    <option value="self-employed">Self Employed</option>
+                                    <option value="business">Business Owner</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Monthly Income (Rs)</label>
+                                <input type="number" class="form-control" name="monthlyIncome" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Company Name</label>
+                                <input type="text" class="form-control" name="companyName" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Work Experience (Years)</label>
+                                <input type="number" class="form-control" name="experience" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Loan Requirements -->
+                    <div class="form-step" data-step="3">
+                        <h3>Loan Requirements</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Loan Type</label>
+                                <select class="form-control" name="loanType" required>
+                                    <option value="">Select Loan Type</option>
+                                    <option value="home">Home Loan</option>
+                                    <option value="personal">Personal Loan</option>
+                                    <option value="vehicle">Vehicle Loan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Loan Amount (Rs)</label>
+                                <input type="number" class="form-control" name="loanAmount" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Loan Tenure (Years)</label>
+                                <input type="number" class="form-control" name="loanTenure" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Purpose</label>
+                                <input type="text" class="form-control" name="purpose" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Review -->
+                    <div class="form-step" data-step="4">
+                        <h3>Review Your Application</h3>
+                        <div id="applicationReview"></div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="terms" required>
+                                I agree to the terms and conditions
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn--secondary" id="prevStep">Previous</button>
+                        <button type="button" class="btn btn--primary" id="nextStep">Next</button>
+                        <button type="submit" class="btn btn--primary hidden" id="submitApp">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section__title">Frequently Asked Questions</h2>
+            <div class="faq__list">
+                <div class="faq__item">
+                    <h3 class="faq__question">What is the minimum income required for a personal loan?</h3>
+                    <p class="faq__answer">For salaried individuals, the minimum income is Rs 25,000 per month. For self-employed individuals, it's Rs 15 lakh annually.</p>
+                </div>
+                <div class="faq__item">
+                    <h3 class="faq__question">How long does loan approval take?</h3>
+                    <p class="faq__answer">Most loans are approved within 24-48 hours once all documents are submitted and verified.</p>
+                </div>
+                <div class="faq__item">
+                    <h3 class="faq__question">Can I prepay my loan without penalty?</h3>
+                    <p class="faq__answer">Yes, home loans have no prepayment penalty. For other loans, terms may vary.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>SmartLoan Hub</h3>
+                    <p>Your trusted partner for all loan requirements</p>
+                    <div class="footer__contact">
+                        <p>📞 1800-123-4567</p>
+                        <p>📧 info@smartloanhub.com</p>
+                        <p>📍 Mumbai, Delhi, Bangalore</p>
+                    </div>
+                </div>
+                <div class="footer__section">
+                    <h4>Loan Types</h4>
+                    <ul>
+                        <li><a href="#home-loans">Home Loans</a></li>
+                        <li><a href="#personal-loans">Personal Loans</a></li>
+                        <li><a href="#vehicle-loans">Vehicle Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#calculators">EMI Calculator</a></li>
+                        <li><a href="#apply">Apply Now</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 SmartLoan Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-toggle">💬</div>
+        <div class="chat-box">
+            <div class="chat-header">
+                <h4>Live Chat Support</h4>
+                <span class="chat-close">✕</span>
+            </div>
+            <div class="chat-messages">
+                <div class="chat-message bot">
+                    Hi! I'm here to help you with your loan queries. How can I assist you today?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button>Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
